@@ -7,6 +7,7 @@ import markdown from "@eslint/markdown";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 import reactHooks from 'eslint-plugin-react-hooks';
+import pluginPrettier from "eslint-plugin-prettier";
 
 export default defineConfig([
 	{
@@ -59,4 +60,14 @@ export default defineConfig([
 		language: "css/css",
 		extends: ["css/recommended"]
 	},
+	{
+		files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+		plugins: {
+			pluginPrettier
+		},
+		extends: ["prettier"],
+		rules: {
+			"prettier/prettier": "error"
+		}
+	}
 ]);
