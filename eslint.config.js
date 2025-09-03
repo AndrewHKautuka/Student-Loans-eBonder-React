@@ -6,6 +6,7 @@ import json from "@eslint/json";
 import markdown from "@eslint/markdown";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default defineConfig([
 	{
@@ -33,6 +34,13 @@ export default defineConfig([
 	},
 	tseslint.configs.recommended,
 	pluginReact.configs.flat.recommended,
+	{
+		files: ["app/**/*.{js,jsx,ts,tsx}"],
+		plugins: {
+			"react-hooks": reactHooks
+		},
+		extends: ['react-hooks/recommended'],
+	},
 	{
 		files: ["**/*.json"],
 		plugins: { json },
