@@ -1,13 +1,13 @@
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import json from "@eslint/json";
 import markdown from "@eslint/markdown";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 import reactHooks from 'eslint-plugin-react-hooks';
-import pluginPrettier from "eslint-plugin-prettier";
+import prettier from "eslint-plugin-prettier";
 
 export default defineConfig([
 	{
@@ -33,14 +33,31 @@ export default defineConfig([
 			}
 		}
 	},
-	tseslint.configs.recommended,
-	pluginReact.configs.flat.recommended,
+	...tseslint.configs.recommended,
 	{
 		files: ["app/**/*.{js,jsx,ts,tsx}"],
 		plugins: {
+			...pluginReactConfig.plugins,
 			"react-hooks": reactHooks
 		},
-		extends: ['react-hooks/recommended'],
+		languageOptions: {
+			...pluginReactConfig.languageOptions,
+			globals: {
+				...globals.browser,
+				...globals.node
+			}
+		},
+		settings: {
+			react: {
+				version: "detect",
+			},
+		},
+		rules: {
+			...pluginReactConfig.rules,
+    		"react/react-in-jsx-scope": "off",
+    		"react/prop-types": "off",
+			...reactHooks.configs.recommended.rules,
+		},
 	},
 	{
 		files: ["**/*.json"],
@@ -63,9 +80,8 @@ export default defineConfig([
 	{
 		files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
 		plugins: {
-			pluginPrettier
+			prettier
 		},
-		extends: ["prettier"],
 		rules: {
 			"prettier/prettier": "error"
 		}
