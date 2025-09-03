@@ -4,7 +4,6 @@ import tseslint from "typescript-eslint"
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js"
 import json from "@eslint/json"
 import markdown from "@eslint/markdown"
-import css from "@eslint/css"
 import { defineConfig } from "eslint/config"
 import reactHooks from "eslint-plugin-react-hooks"
 import prettier from "eslint-plugin-prettier"
@@ -70,12 +69,6 @@ export default defineConfig([
     plugins: { markdown },
     language: "markdown/gfm",
     extends: ["markdown/recommended"],
-  },
-  {
-    files: ["**/*.css"],
-    plugins: { css },
-    language: "css/css",
-    extends: ["css/recommended"],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
