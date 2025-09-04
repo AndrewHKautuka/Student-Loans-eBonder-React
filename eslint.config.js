@@ -15,6 +15,7 @@ export default defineConfig([
       "node_modules",
       "build",
       ".vscode",
+      ".github",
       ".react-router",
       "**/*.config.js",
       "**/*.config.ts",

@@ -33,6 +33,7 @@ export default defineConfig(({ mode }) => {
       exclude: [
         ...vitestConfigDefaults.exclude,
         "**/build/**",
+        "**/.github/**",
         "**/.vscode/**",
         "**/.react-router/**",
       ],
