@@ -14,6 +14,7 @@ export default defineConfig({
     reactRouter(),
     babel({
       filter: /\.[jt]sx?$/,
+      exclude: /node_modules/, // exclude node_modules folder
       babelConfig: {
         presets: ["@babel/preset-typescript"], // if you use TypeScript
         plugins: [["babel-plugin-react-compiler", ReactCompilerConfig]],
