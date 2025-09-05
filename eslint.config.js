@@ -1,6 +1,7 @@
 import js from "@eslint/js"
 import json from "@eslint/json"
 import markdown from "@eslint/markdown"
+import tanstackQuery from "@tanstack/eslint-plugin-query"
 import prettier from "eslint-plugin-prettier"
 import reactHooks from "eslint-plugin-react-hooks"
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js"
@@ -39,6 +40,7 @@ export default defineConfig([
     plugins: {
       ...pluginReactConfig.plugins,
       "react-hooks": reactHooks,
+      "@tanstack/query": tanstackQuery,
     },
     languageOptions: {
       ...pluginReactConfig.languageOptions,
@@ -57,6 +59,7 @@ export default defineConfig([
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       ...reactHooks.configs.recommended.rules,
+      ...tanstackQuery.configs.recommended.rules,
     },
   },
   {
