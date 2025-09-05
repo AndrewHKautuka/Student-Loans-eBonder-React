@@ -1,3 +1,8 @@
 export const AXIOS_API_CLIENT = {
   DEFAULT_TIMEOUT: 5_000,
 } as const
+
+export const TANSTACK_QUERY_CLIENT = {
+  DEFAULT_REFETCH_ON_WINDOW_FOCUS: false,
+  DEFAULT_STALE_TIME: 60_000,
+} as const

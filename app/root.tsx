@@ -7,10 +7,13 @@ import {
   ScrollRestoration,
 } from "react-router"
 
+import { QueryClientProvider } from "@tanstack/react-query"
+
 import type { Route } from "./+types/root"
 import "./app.css"
 import { Toaster } from "./components/ui/sonner"
 import { ThemeProvider } from "./context/theme-context"
+import { queryClient } from "./lib/query-client"
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -46,9 +49,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <>
-      <ThemeProvider>
-        <Outlet />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <Outlet />
+        </ThemeProvider>
+      </QueryClientProvider>
       <Toaster richColors position="bottom-right" />
     </>
   )
