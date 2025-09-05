@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root"
 import "./app.css"
+import { Toaster } from "./components/ui/sonner"
 import { ThemeProvider } from "./context/theme-context"
 
 export const links: Route.LinksFunction = () => [
@@ -44,9 +45,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <Outlet />
-    </ThemeProvider>
+    <>
+      <ThemeProvider>
+        <Outlet />
+      </ThemeProvider>
+      <Toaster richColors position="bottom-right" />
+    </>
   )
 }
 
