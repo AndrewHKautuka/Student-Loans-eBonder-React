@@ -30,8 +30,35 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
   {
+    rel: "manifest",
+    href: "/manifest.webmanifest",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "48x48",
+    href: "/icons/favicon-48x48.png",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "32x32",
+    href: "/icons/favicon-32x32.png",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "16x16",
+    href: "/icons/favicon-16x16.png",
+  },
+  {
     rel: "icon",
     href: "/icons/favicon.ico",
+  },
+  {
+    rel: "apple-touch-icon",
+    sizes: "180x180",
+    href: "/icons/apple-touch-icon.png",
   },
 ]
 
@@ -43,6 +70,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script src="/registerSW.js" defer></script>
       </head>
       <body>
         {children}
