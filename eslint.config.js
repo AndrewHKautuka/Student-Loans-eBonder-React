@@ -2,6 +2,7 @@ import js from "@eslint/js"
 import json from "@eslint/json"
 import markdown from "@eslint/markdown"
 import tanstackQuery from "@tanstack/eslint-plugin-query"
+import importZod from "eslint-plugin-import-zod"
 import prettier from "eslint-plugin-prettier"
 import reactHooks from "eslint-plugin-react-hooks"
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js"
@@ -41,6 +42,7 @@ export default defineConfig([
       ...pluginReactConfig.plugins,
       "react-hooks": reactHooks,
       "@tanstack/query": tanstackQuery,
+      "import-zod": importZod,
     },
     languageOptions: {
       ...pluginReactConfig.languageOptions,
@@ -60,6 +62,7 @@ export default defineConfig([
       "react/prop-types": "off",
       ...reactHooks.configs.recommended.rules,
       ...tanstackQuery.configs.recommended.rules,
+      "import-zod/prefer-zod-namespace": "error",
     },
   },
   {
