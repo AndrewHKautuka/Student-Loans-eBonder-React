@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => {
     }),
     tsconfigPaths(),
     VitePWA({
+      injectRegister: "script-defer",
       includeAssets: [
         "/icons/favicon.ico",
         "/icons/favicon-16x16.png",
