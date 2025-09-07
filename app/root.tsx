@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 import {
   isRouteErrorResponse,
   Links,
@@ -13,6 +15,7 @@ import type { Route } from "./+types/root"
 import "./app.css"
 import { Toaster } from "./components/ui/sonner"
 import { ThemeProvider } from "./context/theme-context"
+import { setupAxe } from "./lib/axe"
 import { queryClient } from "./lib/query-client"
 
 export const links: Route.LinksFunction = () => [
@@ -82,6 +85,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  useEffect(() => {
+    setupAxe()
+  }, [])
+
   return (
     <>
       <QueryClientProvider client={queryClient}>
