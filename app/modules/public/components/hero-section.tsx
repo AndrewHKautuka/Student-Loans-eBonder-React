@@ -20,7 +20,7 @@ export default function HeroSection() {
       <div className="flex min-h-[calc(100vh-(var(--spacing)*16))] w-full flex-col items-center gap-6 p-16 text-center backdrop-blur-sm backdrop-brightness-50 backdrop-grayscale-0 backdrop-sepia-25 hover:backdrop-grayscale-50 hover:backdrop-sepia-0">
         <h1
           id="hero-title"
-          className="text-4xl tracking-tight text-balance text-white sm:text-5xl lg:text-8xl"
+          className="tracking-tight text-balance text-white sm:text-5xl lg:text-8xl"
         >
           Streamlined Loans Bonding for Higher Education
         </h1>
