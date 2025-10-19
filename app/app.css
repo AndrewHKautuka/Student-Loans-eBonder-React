@@ -9,15 +9,6 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
-}
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -129,7 +120,27 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+  html,
+  body,
+  #root,
+  .app {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
   body {
     @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-3xl font-extrabold;
+  }
+  h2 {
+    @apply text-3xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  h4 {
+    @apply text-xl font-semibold;
   }
 }
