@@ -2,15 +2,18 @@ import {
   BarChart3Icon,
   Building2Icon,
   CheckCircle2Icon,
+  EyeOffIcon,
   FileTextIcon,
   GraduationCapIcon,
   ListChecksIcon,
   ShieldCheckIcon,
+  SnailIcon,
+  SquareStackIcon,
   TimerIcon,
   UploadIcon,
 } from "lucide-react"
 
-import type { RoleCardDatum } from "../types/public-types"
+import type { Card, CardItem } from "../types/public-types"
 
 export const SECTION_DETAILS = {
   HERO: {
@@ -18,13 +21,33 @@ export const SECTION_DETAILS = {
     DESCRIPTION:
       "Student Loans eBonder digitally transforms the loans bonding process for students, institutions, and the Loans Board. Automate paperwork, track status in real-time, and manage approvals securely from one centralized platform.",
   },
+  SYSTEM_OVERVIEW: {
+    TITLE: "Why a Digital Bonding System?",
+    DESCRIPTION:
+      "Address the limitations of manual, paper-based workflows with a secure, transparent, and efficient digital experience",
+  },
   USER_BENEFITS: {
     TITLE: "Benefits by Role",
     DESCRIPTION: "Clear, role-specific value for every stakeholder.",
   },
 } as const
 
-export const userBenefitsroleCards: RoleCardDatum[] = [
+export const SYSTEM_OVERVIEW_MANUAL_SYSTEM_ISSUES: CardItem[] = [
+  {
+    text: "Duplicate data entry and inconsistent records",
+    icon: SquareStackIcon,
+  },
+  {
+    text: "Slow verification, approvals, and follow-ups",
+    icon: SnailIcon,
+  },
+  {
+    text: "Limited auditability and oversight",
+    icon: EyeOffIcon,
+  },
+] as const
+
+export const USER_BENEFITS_ROLE_CARDS: Card[] = [
   {
     icon: GraduationCapIcon,
     title: "Students",

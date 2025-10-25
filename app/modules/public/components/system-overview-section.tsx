@@ -1,5 +1,3 @@
-import { EyeOffIcon, SnailIcon, SquareStackIcon } from "lucide-react"
-
 import {
   Card,
   CardContent,
@@ -8,18 +6,22 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import {
+  SECTION_DETAILS,
+  SYSTEM_OVERVIEW_MANUAL_SYSTEM_ISSUES,
+} from "../constants/public-constants"
+
 export default function SystemOverviewSection() {
   return (
     <section aria-labelledby="overview-title" className="container mx-auto">
       <Card>
         <CardHeader>
           <CardTitle id="overview-title" className="text-3xl font-bold">
-            Why a Digital Bonding System?
+            {SECTION_DETAILS.SYSTEM_OVERVIEW.TITLE}
           </CardTitle>
 
           <CardDescription className="max-w-1/2 text-pretty">
-            Address the limitations of manual, paper-based workflows with a
-            secure, transparent, and efficient digital experience
+            {SECTION_DETAILS.SYSTEM_OVERVIEW.DESCRIPTION}
           </CardDescription>
         </CardHeader>
 
@@ -33,8 +35,12 @@ export default function SystemOverviewSection() {
             </p>
 
             <ul>
-              {manualSystemIssues.map((issue) => (
-                <ManualSystemIssue key={issue.text} {...issue} />
+              {SYSTEM_OVERVIEW_MANUAL_SYSTEM_ISSUES.map((issue) => (
+                <ManualSystemIssue
+                  key={issue.text}
+                  text={issue.text}
+                  icon={<issue.icon className="text-primary size-4" />}
+                />
               ))}
             </ul>
 
@@ -76,18 +82,3 @@ function ManualSystemIssue({ text, icon }: ManualSystemIssueProps) {
     </li>
   )
 }
-
-const manualSystemIssues = [
-  {
-    text: "Duplicate data entry and inconsistent records",
-    icon: <SquareStackIcon className="size-4" />,
-  },
-  {
-    text: "Slow verification, approvals, and follow-ups",
-    icon: <SnailIcon className="size-4" />,
-  },
-  {
-    text: "Limited auditability and oversight",
-    icon: <EyeOffIcon className="size-4" />,
-  },
-]

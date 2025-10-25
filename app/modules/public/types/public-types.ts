@@ -1,12 +1,12 @@
 import type { Icon } from "@/types/icon"
 
-export interface RoleCardItem {
+export interface CardItem {
   text: string
   icon: Icon
 }
 
-export interface RoleCardDatum {
+export interface Card {
   icon: Icon
   title: string
-  items: RoleCardItem[]
+  items: CardItem[]
 }

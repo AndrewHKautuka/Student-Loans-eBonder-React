@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import {
   SECTION_DETAILS,
-  userBenefitsroleCards,
+  USER_BENEFITS_ROLE_CARDS,
 } from "../constants/public-constants"
 
 export default function UserBenefitsSection() {
@@ -20,7 +20,7 @@ export default function UserBenefitsSection() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {userBenefitsroleCards.map((datum) => (
+        {USER_BENEFITS_ROLE_CARDS.map((datum) => (
           <RoleCard
             key={datum.title}
             icon={<datum.icon className="size-5" />}
