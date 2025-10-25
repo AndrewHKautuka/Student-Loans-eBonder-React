@@ -8,5 +8,6 @@ export interface CardItem {
 export interface Card {
   icon: Icon
   title: string
+  description?: string
   items: CardItem[]
 }

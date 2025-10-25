@@ -1,12 +1,24 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 interface PublicCardProps {
   title: string
+  description?: string
   icon: React.ReactNode
   items: { text: string; icon: React.ReactNode }[]
 }
 
-export function PublicCard({ title, icon, items }: PublicCardProps) {
+export function PublicCard({
+  title,
+  description,
+  icon,
+  items,
+}: PublicCardProps) {
   return (
     <Card>
       <CardHeader className="gap-2">
@@ -14,10 +26,13 @@ export function PublicCard({ title, icon, items }: PublicCardProps) {
           {icon}
           <CardTitle className="text-lg">{title}</CardTitle>
         </div>
+        {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
 
-      <CardContent>
-        <ul className="text-muted-foreground space-y-2 text-sm">
+      <CardContent className="flex h-full flex-col">
+        <div className="flex flex-1" />
+
+        <ul className="text-muted-foreground bottom-0 space-y-2 text-sm">
           {items.map((item, idx) => (
             <li
               key={idx}
