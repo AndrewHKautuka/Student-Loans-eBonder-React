@@ -41,6 +41,10 @@ export const SECTION_DETAILS = {
     TITLE: "Getting Started",
     DESCRIPTION: "Clear pathways for each user type and system requirements.",
   },
+  CALL_TO_ACTION: {
+    TITLE: "Ready to transform your bonding process?",
+    DESCRIPTION: "Choose the path that best matches your role.",
+  },
 } as const
 
 export const SYSTEM_OVERVIEW_MANUAL_SYSTEM_ISSUES: CardItem[] = [
