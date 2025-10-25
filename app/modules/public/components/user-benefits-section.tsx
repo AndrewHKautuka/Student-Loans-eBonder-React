@@ -1,9 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
 import {
   SECTION_DETAILS,
   USER_BENEFITS_ROLE_CARDS,
 } from "../constants/public-constants"
+import { PublicCard } from "./public-card"
 
 export default function UserBenefitsSection() {
   return (
@@ -21,7 +20,7 @@ export default function UserBenefitsSection() {
 
       <div className="grid gap-6 md:grid-cols-3">
         {USER_BENEFITS_ROLE_CARDS.map((datum) => (
-          <RoleCard
+          <PublicCard
             key={datum.title}
             icon={<datum.icon className="size-5" />}
             title={datum.title}
@@ -33,40 +32,5 @@ export default function UserBenefitsSection() {
         ))}
       </div>
     </section>
-  )
-}
-
-function RoleCard({
-  title,
-  icon,
-  items,
-}: {
-  title: string
-  icon: React.ReactNode
-  items: { text: string; icon: React.ReactNode }[]
-}) {
-  return (
-    <Card>
-      <CardHeader className="gap-2">
-        <div className="text-primary flex items-center gap-2">
-          {icon}
-          <CardTitle className="text-lg">{title}</CardTitle>
-        </div>
-      </CardHeader>
-
-      <CardContent>
-        <ul className="text-muted-foreground space-y-2 text-sm">
-          {items.map((item, idx) => (
-            <li
-              key={idx}
-              className="flex flex-row items-center justify-start gap-2"
-            >
-              <span className="text-primary">{item.icon}</span>
-              <span>{item.text}</span>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
   )
 }
