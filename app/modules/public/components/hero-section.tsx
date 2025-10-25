@@ -11,6 +11,8 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
+import { SECTION_HEADINGS } from "../constants/public-constants"
+
 export default function HeroSection() {
   return (
     <section
@@ -18,32 +20,24 @@ export default function HeroSection() {
       className="container mx-auto aspect-video bg-[url(https://picsum.photos/seed/picsum/1200/675)] bg-cover bg-center bg-no-repeat"
     >
       <div className="flex h-full w-full flex-col items-center gap-6 p-16 text-center backdrop-blur-sm backdrop-brightness-50 backdrop-grayscale-0 backdrop-sepia-25 hover:backdrop-grayscale-50 hover:backdrop-sepia-0">
-        <HeroTitle id="hero-title" />
+        <h1
+          id="hero-title"
+          className="tracking-tight text-balance text-white sm:text-5xl lg:text-8xl"
+        >
+          {SECTION_HEADINGS.HERO_TITLE}
+        </h1>
 
         <RoleBadges />
 
-        <HeroDescription />
+        <p className="max-w-2xl text-lg text-pretty text-neutral-200">
+          {SECTION_HEADINGS.HERO_DESCRIPTION}
+        </p>
 
         <div className="flex flex-1" />
 
         <CallToActionButtons />
       </div>
     </section>
-  )
-}
-
-interface HeroTitleProps {
-  id: string
-}
-
-function HeroTitle({ id }: HeroTitleProps) {
-  return (
-    <h1
-      id={id}
-      className="tracking-tight text-balance text-white sm:text-5xl lg:text-8xl"
-    >
-      Streamlined Loans Bonding for Higher Education
-    </h1>
   )
 }
 
@@ -63,17 +57,6 @@ function RoleBadges() {
   )
 }
 
-function HeroDescription() {
-  return (
-    <p className="max-w-2xl text-lg text-pretty text-neutral-200">
-      Student Loans eBonder digitally transforms the loans bonding process for
-      students, institutions, and the Loans Board. Automate paperwork, track
-      status in real-time, and manage approvals securely from one centralized
-      platform.
-    </p>
-  )
-}
-
 function CallToActionButtons() {
   return (
     <div className="bottom-0 flex flex-wrap gap-4">
@@ -85,6 +68,7 @@ function CallToActionButtons() {
           Sign up as Student <ArrowRightIcon className="size-4" />
         </Link>
       </Button>
+
       <Button size="lg" variant="outline" asChild>
         <Link
           to="/login"
