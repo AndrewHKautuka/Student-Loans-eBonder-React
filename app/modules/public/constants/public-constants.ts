@@ -37,6 +37,10 @@ export const SECTION_DETAILS = {
     TITLE: "Core Features",
     DESCRIPTION: "Primary capabilities across three key areas.",
   },
+  GETTING_STARTED: {
+    TITLE: "Getting Started",
+    DESCRIPTION: "Clear pathways for each user type and system requirements.",
+  },
 } as const
 
 export const SYSTEM_OVERVIEW_MANUAL_SYSTEM_ISSUES: CardItem[] = [
