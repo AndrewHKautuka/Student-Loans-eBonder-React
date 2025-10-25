@@ -12,13 +12,16 @@ import {
 
 import type { RoleCardDatum } from "../types/public-types"
 
-export const SECTION_HEADINGS = {
-  HERO_TITLE: "Streamlined Loans Bonding for Higher Education",
-  HERO_DESCRIPTION:
-    "Student Loans eBonder digitally transforms the loans bonding process for students, institutions, and the Loans Board. Automate paperwork, track status in real-time, and manage approvals securely from one centralized platform.",
-  USER_BENEFITS_TITLE: "Benefits by Role",
-  USER_BENEFITS_DESCRIPTION:
-    "Clear, role-specific value for every stakeholder.",
+export const SECTION_DETAILS = {
+  HERO: {
+    TITLE: "Streamlined Loans Bonding for Higher Education",
+    DESCRIPTION:
+      "Student Loans eBonder digitally transforms the loans bonding process for students, institutions, and the Loans Board. Automate paperwork, track status in real-time, and manage approvals securely from one centralized platform.",
+  },
+  USER_BENEFITS: {
+    TITLE: "Benefits by Role",
+    DESCRIPTION: "Clear, role-specific value for every stakeholder.",
+  },
 } as const
 
 export const userBenefitsroleCards: RoleCardDatum[] = [

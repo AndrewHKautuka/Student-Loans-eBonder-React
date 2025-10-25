@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import {
-  SECTION_HEADINGS,
+  SECTION_DETAILS,
   userBenefitsroleCards,
 } from "../constants/public-constants"
 
@@ -12,10 +12,10 @@ export default function UserBenefitsSection() {
       className="container mx-auto space-y-6"
     >
       <div className="space-y-2">
-        <h2 id="benefits-title">{SECTION_HEADINGS.USER_BENEFITS_TITLE}</h2>
+        <h2 id="benefits-title">{SECTION_DETAILS.USER_BENEFITS.TITLE}</h2>
 
         <p className="text-muted-foreground">
-          {SECTION_HEADINGS.USER_BENEFITS_DESCRIPTION}
+          {SECTION_DETAILS.USER_BENEFITS.DESCRIPTION}
         </p>
       </div>
 

@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
-import { SECTION_HEADINGS } from "../constants/public-constants"
+import { SECTION_DETAILS } from "../constants/public-constants"
 
 export default function HeroSection() {
   return (
@@ -24,13 +24,13 @@ export default function HeroSection() {
           id="hero-title"
           className="tracking-tight text-balance text-white sm:text-5xl lg:text-8xl"
         >
-          {SECTION_HEADINGS.HERO_TITLE}
+          {SECTION_DETAILS.HERO.TITLE}
         </h1>
 
         <RoleBadges />
 
         <p className="max-w-2xl text-lg text-pretty text-neutral-200">
-          {SECTION_HEADINGS.HERO_DESCRIPTION}
+          {SECTION_DETAILS.HERO.DESCRIPTION}
         </p>
 
         <div className="flex flex-1" />
