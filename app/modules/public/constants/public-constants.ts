@@ -13,7 +13,9 @@ import {
 import type { RoleCardDatum } from "../types/public-types"
 
 export const SECTION_HEADINGS = {
-  USER_BENEFITS: "Benefits by Role",
+  USER_BENEFITS_TITLE: "Benefits by Role",
+  USER_BENEFITS_DESCRIPTION:
+    "Clear, role-specific value for every stakeholder.",
 } as const
 
 export const userBenefitsroleCards: RoleCardDatum[] = [

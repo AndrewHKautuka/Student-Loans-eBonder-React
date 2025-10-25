@@ -12,10 +12,10 @@ export default function UserBenefitsSection() {
       className="container mx-auto space-y-6"
     >
       <div className="space-y-2">
-        <h2 id="benefits-title">{SECTION_HEADINGS.USER_BENEFITS}</h2>
+        <h2 id="benefits-title">{SECTION_HEADINGS.USER_BENEFITS_TITLE}</h2>
 
         <p className="text-muted-foreground">
-          Clear, role-specific value for every stakeholder.
+          {SECTION_HEADINGS.USER_BENEFITS_DESCRIPTION}
         </p>
       </div>
 
