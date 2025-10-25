@@ -1,6 +1,6 @@
 import {
   SECTION_DETAILS,
-  USER_BENEFITS_ROLE_CARDS,
+  USER_BENEFITS_CARDS,
 } from "../constants/public-constants"
 import { PublicCard } from "./public-card"
 
@@ -19,12 +19,12 @@ export default function UserBenefitsSection() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {USER_BENEFITS_ROLE_CARDS.map((datum) => (
+        {USER_BENEFITS_CARDS.map((card) => (
           <PublicCard
-            key={datum.title}
-            icon={<datum.icon className="size-5" />}
-            title={datum.title}
-            items={datum.items.map((item) => ({
+            key={card.title}
+            icon={<card.icon className="size-5" />}
+            title={card.title}
+            items={card.items.map((item) => ({
               text: item.text,
               icon: <item.icon className="size-4" />,
             }))}

@@ -47,7 +47,7 @@ export const SYSTEM_OVERVIEW_MANUAL_SYSTEM_ISSUES: CardItem[] = [
   },
 ] as const
 
-export const USER_BENEFITS_ROLE_CARDS: Card[] = [
+export const USER_BENEFITS_CARDS: Card[] = [
   {
     icon: GraduationCapIcon,
     title: "Students",
