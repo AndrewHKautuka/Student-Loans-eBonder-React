@@ -1,4 +1,4 @@
-import type { Icon } from "@/types/icon"
+import type { Icon } from "@/types/ui"
 
 export interface CardItem {
   text: string
