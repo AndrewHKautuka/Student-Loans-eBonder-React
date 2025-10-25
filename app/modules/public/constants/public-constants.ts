@@ -1,8 +1,11 @@
 import {
   BarChart3Icon,
+  BellIcon,
   Building2Icon,
   CheckCircle2Icon,
+  DotIcon,
   EyeOffIcon,
+  FileSignatureIcon,
   FileTextIcon,
   GraduationCapIcon,
   ListChecksIcon,
@@ -29,6 +32,10 @@ export const SECTION_DETAILS = {
   USER_BENEFITS: {
     TITLE: "Benefits by Role",
     DESCRIPTION: "Clear, role-specific value for every stakeholder.",
+  },
+  CORE_FEATURES: {
+    TITLE: "Core Features",
+    DESCRIPTION: "Primary capabilities across three key areas.",
   },
 } as const
 
@@ -99,6 +106,67 @@ export const USER_BENEFITS_CARDS: Card[] = [
       {
         text: "Enhanced oversight & controls",
         icon: CheckCircle2Icon,
+      },
+    ],
+  },
+] as const
+
+export const CORE_FEATURES_CARDS: Card[] = [
+  {
+    icon: FileSignatureIcon,
+    title: "Bonding Process Management",
+    description:
+      "Manage the complete workflow from period creation to final approval.",
+    items: [
+      {
+        text: "Define bonding periods and eligibility criteria",
+        icon: DotIcon,
+      },
+      {
+        text: "Digital data capture and document collection",
+        icon: DotIcon,
+      },
+      {
+        text: "Role-based verification and approvals",
+        icon: DotIcon,
+      },
+    ],
+  },
+  {
+    icon: BellIcon,
+    title: "Status Tracking & Notifications",
+    description: "Transparent progress with timely updates and alerts.",
+    items: [
+      {
+        text: "Real-time status updates for all roles",
+        icon: DotIcon,
+      },
+      {
+        text: "Email or in-app notifications at key steps",
+        icon: DotIcon,
+      },
+      {
+        text: "Audit trail for every action",
+        icon: DotIcon,
+      },
+    ],
+  },
+  {
+    icon: BarChart3Icon,
+    title: "Reporting & Analytics",
+    description: "Operational and strategic insights for better oversight.",
+    items: [
+      {
+        text: "Institution and board-level dashboards",
+        icon: DotIcon,
+      },
+      {
+        text: "Exportable reports and trend analysis",
+        icon: DotIcon,
+      },
+      {
+        text: "KPI tracking and performance metrics",
+        icon: DotIcon,
       },
     ],
   },
